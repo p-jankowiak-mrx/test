@@ -1,0 +1,16 @@
+name: OneJourney workflow
+on: push
+env:
+  BUILD_NUMBER: ${{ github.sha }}
+jobs:
+  test1:
+    name: Test 1
+    env:
+      TEST_1: abc
+    steps:
+      - name: Print envs
+        run: env
+      - name: Setup new env
+        run: export TEST_2=def
+      - name: Print envs
+        run: env

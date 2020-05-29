@@ -1,4 +1,4 @@
-name: OneJourney workflow
+name: Test workflow
 on: push
 env:
   BUILD_NUMBER: ${{ github.sha }}

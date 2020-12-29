@@ -16,6 +16,7 @@ jobs:
       - name: Print envs
         run: env
 
+      - uses: actions/checkout@v2
       - name: Test action1
         id: foo
         uses: ./action1

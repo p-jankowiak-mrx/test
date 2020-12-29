@@ -15,3 +15,11 @@ jobs:
         run: export TEST_2=def
       - name: Print envs
         run: env
+
+      - name: Test action1
+        id: foo
+        uses: ./action1
+        with:
+          who-to-greet: 'Mona the Octocat'
+      - run: echo random-number ${{ steps.foo.outputs.random-number }}
+        shell: bash

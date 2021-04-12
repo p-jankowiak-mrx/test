@@ -6,13 +6,13 @@ on:
 #    branches:
 #      - master
   pull_request_target:
-    types:
-      - opened
-      - reopened
-      - closed
-      - synchronize
-    branches:
-      - master
+#    types:
+#      - opened
+#      - reopened
+#      - closed
+#      - synchronize
+#    branches:
+#      - master
 jobs:
   test1:
     name: Test 1

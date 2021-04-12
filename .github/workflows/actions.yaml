@@ -1,17 +1,12 @@
-name: Test workflow
-on: push
-env:
-  BUILD_NUMBER: ${{ github.sha }}
+name: not develop and not master
+on:
+  pull_request_target:
+    branches:
+      - test1
 jobs:
   test1:
     name: Test 1
-    runs-on: ubuntu-latest
-    env:
-      TEST_1: abc
+    runs-on: ubuntu-20.04
     steps:
       - name: Print envs
-        run: env
-      - name: Setup new env
-        run: export TEST_2=def
-      - name: Print envs
-        run: env
+        run: echo job

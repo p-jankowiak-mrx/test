@@ -11,8 +11,8 @@ on:
       - reopened
       - closed
       - synchronize
-#    branches:
-#      - test1
+    branches:
+      - master
 jobs:
   test1:
     name: Test 1

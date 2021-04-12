@@ -1,4 +1,4 @@
-name: not develop and not master
+name: test
 on:
 #  pull_request:
 #    types:
@@ -11,8 +11,8 @@ on:
       - reopened
       - closed
       - synchronize
-    branches:
-      - test1
+#    branches:
+#      - test1
 jobs:
   test1:
     name: Test 1

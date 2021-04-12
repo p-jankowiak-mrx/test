@@ -1,8 +1,10 @@
 name: not develop and not master
 on:
   pull_request_target:
+    types:
+      - synchronize
     branches:
-      - master
+      - test1
 jobs:
   test1:
     name: Test 1

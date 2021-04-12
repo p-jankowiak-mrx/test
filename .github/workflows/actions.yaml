@@ -18,5 +18,4 @@ jobs:
     name: Test 1
     runs-on: ubuntu-20.04
     steps:
-      - name: Print envs
-        run: echo job
+      - run: echo Test 1

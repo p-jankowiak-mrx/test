@@ -2,7 +2,7 @@ name: not develop and not master
 on:
   pull_request_target:
     branches:
-      - test1
+      - master
 jobs:
   test1:
     name: Test 1

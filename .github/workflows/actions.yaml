@@ -1,13 +1,18 @@
 name: not develop and not master
 on:
-  pull_request_target:
+  pull_request:
     types:
-      - opened
-      - reopened
-      - closed
       - synchronize
     branches:
       - master
+#  pull_request_target:
+#    types:
+#      - opened
+#      - reopened
+#      - closed
+#      - synchronize
+#    branches:
+#      - master
 jobs:
   test1:
     name: Test 1

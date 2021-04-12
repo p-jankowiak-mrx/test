@@ -7,7 +7,7 @@ on:
       - closed
       - synchronize
     branches:
-      - test1
+      - master
 jobs:
   test1:
     name: Test 1

@@ -23,4 +23,4 @@ jobs:
     steps:
       - name: Print
         run: |
-         echo ${{ needs.test1.outputs.outpt
+         echo ${{ needs.test1.outputs.outpt }}

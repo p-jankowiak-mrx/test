@@ -2,6 +2,8 @@ name: Test workflow
 on: push
 env:
   BUILD_NUMBER: ${{ github.sha }}
+  ECR_REGISTRY: abc
+  TAG: "${ECR_REGISTRY}:${BUILD_NUMBER}"
 jobs:
   test1:
     name: Test 1
@@ -10,6 +12,7 @@ jobs:
       - name: Setup new env
         id: image-tags
         run: |
+          echo $TAG
           echo "::set-output name=php_image::ABC-${BUILD_NUMBER}"
       - name: Print envs
         env:

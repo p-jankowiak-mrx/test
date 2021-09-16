@@ -12,4 +12,6 @@ jobs:
         run: |
           echo "::set-output name=php_image::ABC-${BUILD_NUMBER}"
       - name: Print envs
-        run: echo ${{ steps.image-tags.php_image }}
+        env:
+          ABC: ${{ steps.image-tags.php_image }}
+        run: echo $ABC

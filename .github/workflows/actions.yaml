@@ -6,12 +6,10 @@ jobs:
   test1:
     name: Test 1
     runs-on: ubuntu-latest
-    env:
-      TEST_1: abc
     steps:
-      - name: Print envs
-        run: env
       - name: Setup new env
-        run: export TEST_2=def
+        id: image-tags
+        run: |
+          echo "::set-output name=php_image::ABC-${BUILD_NUMBER}"
       - name: Print envs
-        run: env
+        run: echo ${{ steps.image-tags.php_image }}

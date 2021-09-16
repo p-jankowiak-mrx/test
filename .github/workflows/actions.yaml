@@ -15,3 +15,12 @@ jobs:
         env:
           ABC: ${{ steps.image-tags.php_image }}
         run: echo $ABC
+    outputs:
+      outpt: ${{ steps.image-tags.php_image }}
+  test2:
+    needs: [test1]
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Print
+        run: |
+         echo ${{ needs.test1.outputs.outpt

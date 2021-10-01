@@ -1,31 +1,13 @@
 name: Test workflow
-on: push
-env:
-  BUILD_NUMBER: ${{ github.sha }}
-  ECR_REGISTRY: abc
-  PHP_IMAGE_TAG: php-${{ github.sha }}
+on:
+  workflow_dispatch:  
+  push:
+    branches:
+      - test-dispatch
 jobs:
   test1:
     name: Test 1
     runs-on: ubuntu-latest
     steps:
-      - name: Setup new env
-        id: image-tags
-        run: |
-          echo $TAG
-          echo "::set-output name=php_image::ABC-${PHP_IMAGE_TAG}"
-      - name: Print envs
-        env:
-          ABC: ${{ steps.image-tags.outputs.php_image }}
-        run: |
-          echo $ABC
-          echo ${{ steps.image-tags.outputs.php_image }}
-    outputs:
-      outpt: ${{ steps.image-tags.outputs.php_image }}
-  test2:
-    needs: [test1]
-    runs-on: ubuntu-20.04
-    steps:
-      - name: Print
-        run: |
-         echo ${{ needs.test1.outputs.outpt }}
+      - name: print
+        run: echo test
